@@ -2,7 +2,9 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS professors;
 DROP TABLE IF EXISTS people;
 DROP TABLE IF EXISTS students;
-DROP TABLE IF EXISTS degrees;
+DROP TABLE IF EXISTS `degrees`;
+DROP TABLE IF EXISTS `subjects`;
+
 SET FOREIGN_KEY_CHECKS = 1;
 
 CREATE TABLE people (
@@ -27,4 +29,16 @@ CREATE TABLE students (
 	 access_method VARCHAR(20) NOT NULL,
 	 PRIMARY KEY (student_id),
 	 FOREIGN KEY (student_id) REFERENCES people(person_id)
+);
+
+CREATE TABLE `degrees`(
+	 degree_id INT AUTO_INCREMENT,
+	 degree_name VARCHAR(80) NOT NULL,
+	 duration_years TINYINT NOT NULL,
+	 PRIMARY KEY(degree_id)
+);
+
+CREATE TABLE `subjects` (
+	 subject_id INT AUTO_INCREMENT
+	 
 );
