@@ -40,5 +40,13 @@ CREATE TABLE `degrees`(
 
 CREATE TABLE `subjects` (
 	 subject_id INT AUTO_INCREMENT
+	 degree_id INT NOT NULL
+	 subject_name VARCHAR(120) NOT NULL
+	 acronym VARCHAR(12) NOT NULL
+	 credits TINYINT NOT NULL,
+	 course TINYINT NOT NULL,
+	 subject_type VARCHAR(30) NOT NULL,
+	 PRIMARY KEY (subject_id),
+	 FOREIGN KEY (degree_id) REFERENCES `degrees`(degree_id)
 	 
 );
